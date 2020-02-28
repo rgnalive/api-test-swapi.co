@@ -5,7 +5,11 @@ class PlanetsEndpoint
     $endpoint = "#{$api_url}/planets/"
   end
 
-  def getPlanets(query)
+  def listPlanets(query)
     self.class.get($endpoint, :query => query)
+  end
+
+  def getPlanet(planetId)
+    self.class.get("#{$endpoint}#{planetId}")
   end
 end
